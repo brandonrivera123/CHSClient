@@ -5,32 +5,27 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CHSAuction.Models;
+using MimeKit;
 
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
+using MailKit.Net.Smtp;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CHSAuction.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly IConfiguration configuration;
+        private readonly EventBasedAuctionSoftwareContext _context;
 
-        //public HomeController(IConfiguration config)
-        //{
-            //this.configuration = config;
-        //}
+        public HomeController(EventBasedAuctionSoftwareContext context)
+        {
+            _context = context;
+        }
 
         public IActionResult Index()
         {
-            //string connectionstring = configuration.GetConnectionString("AuctionDatabase");
-
-            //SqlConnection connection = new SqlConnection(connectionstring);
-
-            //connection.Open();
-            //SqlCommand com = new SqlCommand("Select count(*) from Admins", connection);
-            //var ha = (int)com.ExecuteScalar();
-            //ViewData["Total"] = ha;
-            //connection.Close();
 
             return View();
         }
@@ -42,8 +37,27 @@ namespace CHSAuction.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Privacy(int transId, int Total, string guestFirst, string guestLast, string email )
         {
+
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("Brandon", "brandonviolin@gmail.com"));
+            message.To.Add(new MailboxAddress("Me", email));
+            message.Subject = "Test Transaction";
+
+            message.Body = new TextPart("plain")
+            {
+                Text = "From:" + Total + " " + guestFirst + " " + guestLast
+            };
+
+            using (var client = new SmtpClient())
+            {
+                client.Connect("smtp.gmail.com", 587, false);
+                client.Authenticate("brandonviolin@gmail.com", "bubbajoe1");
+                client.Send(message);
+                client.Disconnect(true);
+            }
+
             return View();
         }
 
