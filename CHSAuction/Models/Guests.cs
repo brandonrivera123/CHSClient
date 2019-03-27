@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CHSAuction.Models
 {
@@ -17,6 +18,7 @@ namespace CHSAuction.Models
         public string GuestFirstName { get; set; }
         public string GuestLastName { get; set; }
         public string GuestEmail { get; set; }
+        [DisplayFormat(DataFormatString = "{0:###-###-####}")]
         public string GuestPhone { get; set; }
         public int? OrganizationId { get; set; }
         public string GuestAddress { get; set; }
