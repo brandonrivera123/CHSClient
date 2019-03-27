@@ -291,7 +291,6 @@
 /Users/brandonrivera/Desktop/CHSClient/CHSAuction/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs
 /Users/brandonrivera/Desktop/CHSClient/CHSAuction/obj/Debug/netcoreapp2.1/Razor/Views/Home/NewItem.g.cshtml.cs
 /Users/brandonrivera/Desktop/CHSClient/CHSAuction/obj/Debug/netcoreapp2.1/Razor/Views/Home/Payments.g.cshtml.cs
-/Users/brandonrivera/Desktop/CHSClient/CHSAuction/obj/Debug/netcoreapp2.1/Razor/Views/Home/Privacy.g.cshtml.cs
 /Users/brandonrivera/Desktop/CHSClient/CHSAuction/obj/Debug/netcoreapp2.1/Razor/Views/Home/TicketSales.g.cshtml.cs
 /Users/brandonrivera/Desktop/CHSClient/CHSAuction/obj/Debug/netcoreapp2.1/Razor/Views/Items/Create.g.cshtml.cs
 /Users/brandonrivera/Desktop/CHSClient/CHSAuction/obj/Debug/netcoreapp2.1/Razor/Views/Items/Delete.g.cshtml.cs
@@ -331,3 +330,4 @@
 /Users/brandonrivera/Desktop/CHSClient/CHSAuction/obj/Debug/netcoreapp2.1/CHSAuction.dll
 /Users/brandonrivera/Desktop/CHSClient/CHSAuction/obj/Debug/netcoreapp2.1/CHSAuction.pdb
 /Users/brandonrivera/Desktop/CHSClient/CHSAuction/obj/Debug/netcoreapp2.1/CHSAuction.csproj.CopyComplete
+/Users/brandonrivera/Desktop/CHSClient/CHSAuction/obj/Debug/netcoreapp2.1/Razor/Views/Home/MessageSent.g.cshtml.cs

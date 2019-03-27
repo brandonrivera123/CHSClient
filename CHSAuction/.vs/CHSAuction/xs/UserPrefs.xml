@@ -1,21 +1,9 @@
 ﻿<Properties StartupConfiguration="{C74CE077-C368-4CC6-89F8-2690EACA2A81}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Transactions/Index.cshtml">
     <Files>
-      <File FileName="Areas/Identity/Pages/_ViewStart.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Shared/_ValidationScriptsPartial.cshtml" Line="1" Column="1" />
-      <File FileName="Properties/launchSettings.json" Line="1" Column="1" />
-      <File FileName="Controllers/HomeController.cs" Line="45" Column="61" />
-      <File FileName="Controllers/EventsController.cs" Line="1" Column="1" />
-      <File FileName="Views/Home/Privacy.cshtml" Line="6" Column="20" />
-      <File FileName="Views/Transactions/Index.cshtml" Line="164" Column="80" />
-      <File FileName="Views/Categories/Details.cshtml" Line="23" Column="26" />
-      <File FileName="Views/Categories/Edit.cshtml" Line="18" Column="16" />
-      <File FileName="Views/Categories/Index.cshtml" Line="26" Column="50" />
-      <File FileName="Models/Events.cs" Line="1" Column="1" />
-      <File FileName="Controllers/ItemsController.cs" Line="29" Column="7" />
-      <File FileName="Controllers/PackagesController.cs" Line="25" Column="41" />
-      <File FileName="Models/Transactions.cs" Line="1" Column="1" />
-      <File FileName="Controllers/CategoriesController.cs" Line="44" Column="36" />
+      <File FileName="Controllers/HomeController.cs" Line="39" Column="41" />
+      <File FileName="Views/Home/MessageSent.cshtml" Line="16" Column="1" />
+      <File FileName="Views/Transactions/Index.cshtml" Line="139" Column="68" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CHSAuction PreferredExecutionTarget="MonoDevelop.Default" />
