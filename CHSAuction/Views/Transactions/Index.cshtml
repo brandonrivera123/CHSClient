@@ -50,10 +50,10 @@ $(document).ready(function(){
             @foreach (var item in Model.Transactions)
             {
                 <tr id="transactionRow">
-                    <td name>
+                    <td>
                         @Html.DisplayFor(modelItem => item.TransactionTotalPrice)
                     </td>
-                    <td name="name" id="transactionName">
+                    <td id="transactionName">
                         @Html.DisplayFor(modelItem => item.Guest.GuestFirstName) @Html.DisplayFor(model => item.Guest.GuestLastName)
                     </td>
                     <td>
