@@ -178,6 +178,27 @@ namespace CHSAuction.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // POST: Packages/Details
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Details(int packageId, int itemId)
+        {
+            var item = _context.Items.FirstOrDefault(i => i.ItemId == itemId);
+
+            if (item == null)
+                return NotFound();
+
+            item.PackageId = packageId;
+
+            if (ModelState.IsValid)
+            {
+                _context.Update(item);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction("Details", "Packages", packageId);
+        }
+
         private bool PackagesExists(int id)
         {
             return _context.Packages.Any(e => e.PackageId == id);
