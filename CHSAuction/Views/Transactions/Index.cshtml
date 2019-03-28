@@ -50,10 +50,10 @@ $(document).ready(function(){
             @foreach (var item in Model.Transactions)
             {
                 <tr id="transactionRow">
-                    <td name>
+                    <td>
                         @Html.DisplayFor(modelItem => item.TransactionTotalPrice)
                     </td>
-                    <td name="name" id="transactionName">
+                    <td id="transactionName">
                         @Html.DisplayFor(modelItem => item.Guest.GuestFirstName) @Html.DisplayFor(model => item.Guest.GuestLastName)
                     </td>
                     <td>
@@ -136,7 +136,7 @@ $(document).ready(function(){
                                 <h4 class="modal-title">Send Transaction No. @item.TransactionId</h4>
                             </div>
                             <div class="modal-body">
-                                @using (Html.BeginForm("Privacy", "Home"))
+                                @using (Html.BeginForm("MessageSent", "Home"))
     {
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <input name="transId" type="hidden" asp-for="TransactionId" value="@item.TransactionId" />
@@ -147,18 +147,18 @@ $(document).ready(function(){
                             </div>
                             <div class="form-group">
                                 <label asp-for="@item.GuestId" class="control-label">Guest</label>
-                                <input name="guestFirst" asp-for="@item.Guest.GuestFirstName" class="form-control" value="@item.Guest.GuestFirstName" />
+                                <input name="guestFirst" asp-for="@item.Guest.GuestFirstName" class="form-control" value="@item.Guest.GuestFirstName" readonly />
                                 <span asp-validation-for="@item.GuestId" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label asp-for="@item.GuestId" class="control-label">Guest</label>
-                                <input name="guestLast" asp-for="@item.Guest.GuestLastName" class="form-control" value="@item.Guest.GuestLastName" />
+                                <input name="guestLast" asp-for="@item.Guest.GuestLastName" class="form-control" value="@item.Guest.GuestLastName" readonly />
                                 <span asp-validation-for="@item.GuestId" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Email</label>
-                                <input name="email" type="email" class="form-control" />
-                                <span class="text-danger"></span>
+                                <label asp-for="@item.GuestId" class="control-label">Guest</label>
+                                <input name="email" asp-for="@item.Guest.GuestEmail" class="form-control" value="@item.Guest.GuestEmail" readonly />
+                                <span asp-validation-for="@item.GuestId" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" />

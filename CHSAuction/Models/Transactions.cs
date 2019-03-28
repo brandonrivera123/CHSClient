@@ -13,7 +13,6 @@ namespace CHSAuction.Models
         }
 
         public int TransactionId { get; set; }
-        [DisplayFormat(DataFormatString = "{0:C0}")]
         public int TransactionTotalPrice { get; set; }
         public int GuestId { get; set; }
 
