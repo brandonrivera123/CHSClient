@@ -8,7 +8,7 @@
 $(document).ready(function(){
   $("#focusedInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();
-    $("#eventCard h3").filter(function() {
+    $("#eventCard .caption").filter(function() {
         $(this).parentsUntil("#eventRow").toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
@@ -40,9 +40,9 @@ $(document).ready(function(){
                 <div id="eventCard" class="col-sm-6 col-md-4">
                     <div class="thumbnail">
                         <div class="caption">
-                            <h3>@Html.DisplayFor(model => item.EventName)</h3>
+                            <h3 id="filter">@Html.DisplayFor(model => item.EventName)</h3>
                             <hr />
-                            <p>Location: @Html.DisplayFor(model => item.EventLocation)</p>
+                            <p id="filter">Location: @Html.DisplayFor(model => item.EventLocation)</p>
                             <p># of Tickets: @Html.DisplayFor(model => item.EventTicketNum)</p>
                             <p>Revenue Goal: @Html.DisplayFor(model => item.EventGoal)</p>
                             <p>Start Time: @Html.DisplayFor(model => item.EventStart)</p>

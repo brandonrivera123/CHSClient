@@ -217,7 +217,7 @@ using CHSAuction.Models;
                     ");
             EndContext();
             BeginContext(5855, 3487, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "251fc02b6c2a42b6929b2f187ecbdf13", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "394e2b8b3cdc4abba6c2315e7d96c618", async() => {
                 BeginContext(5885, 2581, true);
                 WriteLiteral(@"
                         <fieldset>
@@ -262,7 +262,7 @@ using CHSAuction.Models;
                                         ");
                 EndContext();
                 BeginContext(8466, 33, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7d6d78b3249c4df3b97557295465f10b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "21fef5273a954d658c335114313d6785", async() => {
                     BeginContext(8474, 16, true);
                     WriteLiteral("Pending Approval");
                     EndContext();
@@ -282,7 +282,7 @@ using CHSAuction.Models;
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(8541, 25, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2a06a90b6024403ca4c47fa386451333", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "46452dd6c5fb4a45ae06c6e311a9b75a", async() => {
                     BeginContext(8549, 8, true);
                     WriteLiteral("Approved");
                     EndContext();
@@ -302,7 +302,7 @@ using CHSAuction.Models;
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(8608, 28, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "838b74e87c224aec9f5750d927a7dec6", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "66e48aaea4da48d095b0e8c4ebcceed4", async() => {
                     BeginContext(8616, 11, true);
                     WriteLiteral("Disapproved");
                     EndContext();
@@ -322,7 +322,7 @@ using CHSAuction.Models;
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(8678, 20, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "611a4d5f6da84dd9970764f05b669413", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "71457b9393794699b84c48774b5643bf", async() => {
                     BeginContext(8686, 3, true);
                     WriteLiteral("N/A");
                     EndContext();
@@ -389,7 +389,7 @@ using CHSAuction.Models;
                     ");
             EndContext();
             BeginContext(9888, 3487, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "05b1585f661546fba8584da41487c64d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddc6a5497f444938aa055f9029bf824b", async() => {
                 BeginContext(9918, 2581, true);
                 WriteLiteral(@"
                         <fieldset>
@@ -434,7 +434,7 @@ using CHSAuction.Models;
                                         ");
                 EndContext();
                 BeginContext(12499, 33, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0ef4af84d89449d964e74f7a6cf275c", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c158672bc6704e758eed7419ff296514", async() => {
                     BeginContext(12507, 16, true);
                     WriteLiteral("Pending Approval");
                     EndContext();
@@ -454,7 +454,7 @@ using CHSAuction.Models;
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(12574, 25, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "18db24c4292f4fb79be1b5d31879b43b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f5766ed88d64244ad707985f52b4535", async() => {
                     BeginContext(12582, 8, true);
                     WriteLiteral("Approved");
                     EndContext();
@@ -474,7 +474,7 @@ using CHSAuction.Models;
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(12641, 28, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd7d9675e8c345a1a32c494f65d0d505", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c42abf9ee64a422b96482c3a421bd301", async() => {
                     BeginContext(12649, 11, true);
                     WriteLiteral("Disapproved");
                     EndContext();
@@ -494,7 +494,7 @@ using CHSAuction.Models;
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(12711, 20, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a97e301ef93a4528944b271103c9bd8c", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef89acdfd69c4fc8a4ea42e069a1741d", async() => {
                     BeginContext(12719, 3, true);
                     WriteLiteral("N/A");
                     EndContext();
