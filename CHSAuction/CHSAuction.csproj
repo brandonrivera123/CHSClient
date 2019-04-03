@@ -26,6 +26,10 @@
     <Content Remove="wwwroot\lib\bootstrap\dist\css\superhero.css" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Views\Items\test.cs" />
+    <None Remove="javascript\item.js" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="wwwroot\lib\bootstrap\dist\css\superhero.css" />
   </ItemGroup>
 </Project>

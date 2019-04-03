@@ -85,7 +85,7 @@ using CHSAuction.Models;
             WriteLiteral("\n        </dd>\n    </dl>\n</div>\n<div>\n    ");
             EndContext();
             BeginContext(415, 62, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68dad22fe0114165b7fdb08d2f38276b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d7a3b2b5a8f344f8b10bccb0ca989688", async() => {
                 BeginContext(469, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -120,7 +120,7 @@ using CHSAuction.Models;
             WriteLiteral(" |\n    ");
             EndContext();
             BeginContext(484, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "02eebb9ee07f479e8b5481f6bda09e06", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f03f9ebf9e3d4af9955f119ed348fe0e", async() => {
                 BeginContext(506, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();
