@@ -44,9 +44,21 @@ namespace CHSAuction.Controllers
             message.To.Add(new MailboxAddress("Guest", email));
             message.Subject = "Test Transaction";
 
-            message.Body = new TextPart("plain")
+            string packages = "";
+
+            foreach(var package in _context.Packages.Where(p => p.TransactionId == transId))
             {
-                Text = "First Name:" + guestFirst + "\nLast Name:" + guestLast + "\nTotal Price:" + Total
+                packages += "<br><br>" + package.PackageName + ":";
+                foreach(var item in _context.Items.Where(m => m.PackageId == package.PackageId))
+                {
+                    packages += "<br> - " + item.ItemName;
+                }
+                packages += "<br><br>Package Price: " + package.PackageFinalPrice + "<hr />";
+            }
+
+            message.Body = new TextPart("html")
+            {
+                Text = "First Name:" + guestFirst + "<br>Last Name:" + guestLast + "<br>Total Price:" + Total + "<br>Packages: " + packages
             };
 
             using (var client = new SmtpClient())
