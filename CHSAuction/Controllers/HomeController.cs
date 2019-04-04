@@ -53,7 +53,7 @@ namespace CHSAuction.Controllers
                 {
                     packages += "<br> - " + item.ItemName;
                 }
-                packages += "<br><br>Package Price: " + package.PackageFinalPrice + "<hr />";
+                packages += "<br>Package Price: " + package.PackageFinalPrice + "<hr />";
             }
 
             message.Body = new TextPart("html")
