@@ -15,8 +15,12 @@ namespace CHSAuction.Models
         public int TransactionId { get; set; }
         public int TransactionTotalPrice { get; set; }
         public int GuestId { get; set; }
+        public int EventId { get; set; }
+        public Boolean TransactionSent { get; set; }
+        public Boolean TransactionPaid { get; set; }
 
         public Guests Guest { get; set; }
+        public Events Event { get; set; }
         public ICollection<Packages> Packages { get; set; }
         public ICollection<Tickets> Tickets { get; set; }
     }

@@ -355,11 +355,23 @@ namespace CHSAuction.Models
 
                 entity.Property(e => e.TransactionTotalPrice).HasColumnName("Transaction_TotalPrice");
 
+                entity.Property(e => e.EventId).HasColumnName("Event_ID");
+
+                entity.Property(e => e.TransactionSent).HasColumnName("Transaction_Sent");
+
+                entity.Property(e => e.TransactionPaid).HasColumnName("Transaction_Paid");
+
                 entity.HasOne(d => d.Guest)
                     .WithMany(p => p.Transactions)
                     .HasForeignKey(d => d.GuestId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Transacti__Guest__74AE54BC");
+
+                entity.HasOne(d => d.Event)
+                    .WithMany(p => p.Transactions)
+                    .HasForeignKey(d => d.EventId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__Transacti__Event__3B40CD36");
             });
         }
     }

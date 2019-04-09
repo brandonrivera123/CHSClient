@@ -21,7 +21,7 @@ namespace CHSAuction.Controllers
         // GET: Transactions
         public async Task<IActionResult> Index()
         {
-            var Transactions = await _context.Transactions.Include(t => t.Guest).ToListAsync();
+            var Transactions = await _context.Transactions.Include(t => t.Guest).Include(e => e.Event).ToListAsync();
 
             var EditTransactionVM = new EditTransactionVM
             {
@@ -29,6 +29,7 @@ namespace CHSAuction.Controllers
             };
 
             ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFirstName");
+            ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventName");
 
             return View(EditTransactionVM);
         }
@@ -64,7 +65,7 @@ namespace CHSAuction.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TransactionId,TransactionTotalPrice,GuestId")] Transactions transactions)
+        public async Task<IActionResult> Create([Bind("TransactionId,TransactionTotalPrice,GuestId,EventId,TransactionSent,TransactionPaid")] Transactions transactions)
         {
             if (ModelState.IsValid)
             {
@@ -73,6 +74,7 @@ namespace CHSAuction.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFirstName", transactions.GuestId);
+            ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventName", transactions.EventId);
             return View(transactions);
         }
 
@@ -98,7 +100,7 @@ namespace CHSAuction.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TransactionId,TransactionTotalPrice,GuestId")] Transactions transactions)
+        public async Task<IActionResult> Edit(int id, [Bind("TransactionId,TransactionTotalPrice,GuestId,EventId,TransactionSent,TransactionPaid")] Transactions transactions)
         {
             if (id != transactions.TransactionId)
             {

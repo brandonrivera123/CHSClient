@@ -12,5 +12,8 @@ namespace CHSAuction.Models
         public int TransactionId { get; set; }
         public int TransactionTotalPrice { get; set; }
         public int GuestId { get; set; }
+        public int EventId { get; set; }
+        public Boolean TransactionSent { get; set; }
+        public Boolean TransactionPaid { get; set; }
     }
 }

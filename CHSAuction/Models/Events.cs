@@ -25,5 +25,6 @@ namespace CHSAuction.Models
         public ICollection<CheckIns> CheckIns { get; set; }
         public ICollection<Packages> Packages { get; set; }
         public ICollection<Tickets> Tickets { get; set; }
+        public ICollection<Transactions> Transactions { get; set; }
     }
 }
