@@ -117,7 +117,7 @@ using CHSAuction.Models;
             WriteLiteral("</p>\r\n                        ");
             EndContext();
             BeginContext(1282, 112, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1dbf573c00aa4fe796b32a9ff1b622d1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "efaca1ce78874c03be6accfaa39a7849", async() => {
                 BeginContext(1383, 7, true);
                 WriteLiteral("Details");
                 EndContext();

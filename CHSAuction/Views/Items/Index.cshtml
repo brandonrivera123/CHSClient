@@ -105,16 +105,16 @@
                                             <p class="col-lg-9">@Html.DisplayFor(model => item.ItemDescription)</p>
 
                                             <p class="col-lg-3">Category: </p>
-                                            <p class="col-lg-9">@Html.DisplayFor(model => item.CategoryId)&nbsp;</p>
+                                            <p class="col-lg-9">@Html.DisplayFor(model => item.Category.CategoryName)&nbsp;</p>
 
                                             <p class="col-lg-3">Value: </p>
                                             <p class="col-lg-9">@Html.DisplayFor(model => item.ItemValue)</p>
 
                                             <p class="col-lg-3">Donor: </p>
-                                            <p class="col-lg-9">@Html.DisplayFor(model => item.GuestId)</p>
+                                            <p class="col-lg-9">@Html.DisplayFor(model => item.Guest.GuestFullName)</p>
 
                                             <p class="col-lg-3">Package: </p>
-                                            <p class="col-lg-9">@Html.DisplayFor(model => item.PackageId)</p>
+                                            <p class="col-lg-9">@Html.DisplayFor(model => item.Package.PackageName)</p>
                                         </fieldset>
                                     </form>
                                 </div>
@@ -146,7 +146,7 @@
                                     <div class="form-group">
                                         <label asp-for="@item.CategoryId" class="control-label">Category</label>
                                         <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId">
-                                            <option value="@item.CategoryId" selected>@Html.DisplayFor(model => item.CategoryId)</option>
+                                            <option value="@item.CategoryId" selected>@Html.DisplayFor(model => item.Category.CategoryName)</option>
                                         </select>
                                         <span asp-validation-for="@item.CategoryId" class="text-danger"></span>
                                     </div>
@@ -163,7 +163,7 @@
                                     <div class="form-group">
                                         <label asp-for="@item.PackageId" class="control-label">Package</label>
                                         <select asp-for="PackageId" class="form-control" asp-items="ViewBag.PackageId">
-                                            <option value="@item.PackageId" selected>@Html.DisplayFor(model => item.PackageId)</option>
+                                            <option value="@item.PackageId" selected>@Html.DisplayFor(model => item.Package.PackageName)</option>
                                             <option value="">None</option>
                                         </select>
                                         <span asp-validation-for="@item.PackageId" class="text-danger"></span>
@@ -171,7 +171,7 @@
                                     <div class="form-group">
                                         <label asp-for="@item.GuestId" class="control-label">Donor</label>
                                         <select asp-for="GuestId" class="form-control" asp-items="ViewBag.GuestId">
-                                            <option value="@item.GuestId" selected>@Html.DisplayFor(model => item.GuestId)</option>
+                                            <option value="@item.GuestId" selected>@Html.DisplayFor(model => item.Guest.GuestFullName)</option>
                                         </select>
                                         <span asp-validation-for="@item.GuestId" class="text-danger"></span>
                                     </div>
@@ -209,7 +209,7 @@
                                         Category:
                                     </dt>
                                     <dd>
-                                        @Html.DisplayFor(model => item.CategoryId)
+                                        @Html.DisplayFor(model => item.Category.CategoryName)
                                     </dd>
                                     <dt>
                                         Image Path:
@@ -227,13 +227,13 @@
                                         Donor:
                                     </dt>
                                     <dd>
-                                        @Html.DisplayFor(model => item.Guest.GuestId)
+                                        @Html.DisplayFor(model => item.Guest.GuestFullName)
                                     </dd>
                                     <dt>
                                         Package:
                                     </dt>
                                     <dd>
-                                        @Html.DisplayFor(model => item.Package.PackageId)
+                                        @Html.DisplayFor(model => item.Package.PackageName)
                                     </dd>
                                 </dl>
 
@@ -299,16 +299,16 @@
                                         <p class="col-lg-9">@Html.DisplayFor(model => item.ItemDescription)</p>
 
                                         <p class="col-lg-3">Category: </p>
-                                        <p class="col-lg-9">@Html.DisplayFor(model => item.CategoryId)&nbsp;</p>
+                                        <p class="col-lg-9">@Html.DisplayFor(model => item.Category.CategoryName)&nbsp;</p>
 
                                         <p class="col-lg-3">Value: </p>
                                         <p class="col-lg-9">@Html.DisplayFor(model => item.ItemValue)</p>
 
                                         <p class="col-lg-3">Donor: </p>
-                                        <p class="col-lg-9">@Html.DisplayFor(model => item.GuestId)</p>
+                                        <p class="col-lg-9">@Html.DisplayFor(model => item.Guest.GuestFullName)</p>
 
                                         <p class="col-lg-3">Package: </p>
-                                        <p class="col-lg-9">@Html.DisplayFor(model => item.PackageId)</p>
+                                        <p class="col-lg-9">@Html.DisplayFor(model => item.Package.PackageName)</p>
                                     </fieldset>
                                 </form>
                             </div>
@@ -340,7 +340,7 @@
                                 <div class="form-group">
                                     <label asp-for="@item.CategoryId" class="control-label">Category</label>
                                     <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId">
-                                        <option value="@item.CategoryId" selected>@Html.DisplayFor(model => item.CategoryId)</option>
+                                        <option value="@item.CategoryId" selected>@Html.DisplayFor(model => item.Category.CategoryName)</option>
                                     </select>
                                     <span asp-validation-for="@item.CategoryId" class="text-danger"></span>
                                 </div>
@@ -357,7 +357,7 @@
                                 <div class="form-group">
                                     <label asp-for="@item.PackageId" class="control-label">Package</label>
                                     <select asp-for="PackageId" class="form-control" asp-items="ViewBag.PackageId">
-                                        <option value="@item.PackageId" selected>@Html.DisplayFor(model => item.PackageId)</option>
+                                        <option value="@item.PackageId" selected>@Html.DisplayFor(model => item.Package.PackageName)</option>
                                         <option value="">None</option>
                                     </select>
                                     <span asp-validation-for="@item.PackageId" class="text-danger"></span>
@@ -365,7 +365,7 @@
                                 <div class="form-group">
                                     <label asp-for="@item.GuestId" class="control-label">Donor</label>
                                     <select asp-for="GuestId" class="form-control" asp-items="ViewBag.GuestId">
-                                        <option value="@item.GuestId" selected>@Html.DisplayFor(model => item.GuestId)</option>
+                                        <option value="@item.GuestId" selected>@Html.DisplayFor(model => item.Guest.GuestFullName)</option>
                                     </select>
                                     <span asp-validation-for="@item.GuestId" class="text-danger"></span>
                                 </div>
@@ -403,7 +403,7 @@
                                     Category:
                                 </dt>
                                 <dd>
-                                    @Html.DisplayFor(model => item.CategoryId)
+                                    @Html.DisplayFor(model => item.Category.CategoryName)
                                 </dd>
                                 <dt>
                                     Image Path:
@@ -421,13 +421,13 @@
                                     Donor:
                                 </dt>
                                 <dd>
-                                    @Html.DisplayFor(model => item.Guest.GuestId)
+                                    @Html.DisplayFor(model => item.Guest.GuestFullName)
                                 </dd>
                                 <dt>
                                     Package:
                                 </dt>
                                 <dd>
-                                    @Html.DisplayFor(model => item.Package.PackageId)
+                                    @Html.DisplayFor(model => item.Package.PackageName)
                                 </dd>
                             </dl>
 

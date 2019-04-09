@@ -156,10 +156,10 @@
                                         <p class="col-lg-9">@Html.DisplayFor(model => item.ItemValue)</p>
 
                                         <p class="col-lg-3">Donor: </p>
-                                        <p class="col-lg-9">@Html.DisplayFor(model => item.GuestId)</p>
+                                        <p class="col-lg-9">@Html.DisplayFor(model => item.Guest.GuestFullName)</p>
 
-                                        <p class="col-lg-3">Package ID: </p>
-                                        <p class="col-lg-9">@Html.DisplayFor(model => item.PackageId)</p>
+                                        <p class="col-lg-3">Package: </p>
+                                        <p class="col-lg-9">@Html.DisplayFor(model => item.Package.PackageName)</p>
                                     </fieldset>
                                 </form>
                             </div>
@@ -191,7 +191,7 @@
                                 <div class="form-group">
                                     <label asp-for="@item.CategoryId" class="control-label">Category</label>
                                     <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId">
-                                        <option value="@item.CategoryId" selected>@Html.DisplayFor(model => item.CategoryId)</option>
+                                        <option value="@item.CategoryId" selected>@Html.DisplayFor(model => item.Category.CategoryName)</option>
                                     </select>
                                     <span asp-validation-for="@item.CategoryId" class="text-danger"></span>
                                 </div>
@@ -216,7 +216,7 @@
                                 <div class="form-group">
                                     <label asp-for="@item.GuestId" class="control-label">Donor</label>
                                     <select asp-for="GuestId" class="form-control" asp-items="ViewBag.GuestId">
-                                        <option value="@item.GuestId" selected>@Html.DisplayFor(model => item.Guest.GuestFirstName)</option>
+                                        <option value="@item.GuestId" selected>@Html.DisplayFor(model => item.Guest.GuestFullName)</option>
                                     </select>
                                     <span asp-validation-for="@item.GuestId" class="text-danger"></span>
                                 </div>

@@ -184,6 +184,13 @@ namespace CHSAuction.Models
                     .HasMaxLength(255)
                     .IsUnicode(false);
 
+                entity.Property(e => e.GuestFullName)
+                    .IsRequired()
+                    .ValueGeneratedOnUpdate()
+                    .HasColumnName("Guest_FullName")
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.GuestZip).HasColumnName("Guest_ZIP");
 
                 entity.Property(e => e.OrganizationId).HasColumnName("Organization_ID");

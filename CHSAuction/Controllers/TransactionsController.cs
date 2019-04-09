@@ -28,7 +28,7 @@ namespace CHSAuction.Controllers
                 Transactions = Transactions
             };
 
-            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFirstName");
+            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFullName");
             ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventName");
 
             return View(EditTransactionVM);
@@ -56,7 +56,7 @@ namespace CHSAuction.Controllers
         // GET: Transactions/Create
         public IActionResult Create()
         {
-            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFirstName");
+            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFullName");
             return View();
         }
 
@@ -73,7 +73,7 @@ namespace CHSAuction.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFirstName", transactions.GuestId);
+            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFullName", transactions.GuestId);
             ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventName", transactions.EventId);
             return View(transactions);
         }
@@ -91,7 +91,7 @@ namespace CHSAuction.Controllers
             {
                 return NotFound();
             }
-            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFirstName", transactions.GuestId);
+            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFullName", transactions.GuestId);
             return View(transactions);
         }
 
@@ -127,7 +127,7 @@ namespace CHSAuction.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFirstName", transactions.GuestId);
+            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFullName", transactions.GuestId);
             return View(transactions);
         }
 

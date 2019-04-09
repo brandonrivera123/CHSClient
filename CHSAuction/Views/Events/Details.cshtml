@@ -140,7 +140,7 @@ $(document).ready(function(){
                                         <p class="col-lg-9">@Html.DisplayFor(model => item.PackageFinalPrice)&nbsp;</p>
 
                                         <p class="col-lg-3">Event: </p>
-                                        <p class="col-lg-9">@Html.DisplayFor(model => item.EventId)</p>
+                                        <p class="col-lg-9">@Html.DisplayFor(model => item.Event.EventName)</p>
 
                                         <p class="col-lg-3">Transaction: </p>
                                         <p class="col-lg-9">@Html.DisplayFor(model => item.TransactionId)</p>
@@ -193,7 +193,7 @@ $(document).ready(function(){
                                     <div class="form-group">
                                         <label asp-for="@item.EventId" class="control-label">Event</label>
                                         <select asp-for="EventId" class="form-control" asp-items="ViewBag.EventId">
-                                            <option value="@Model.Events.EventId" selected>@Html.DisplayFor(model => Model.Events.EventLocation)</option>
+                                            <option value="@Model.Events.EventId" selected>@Html.DisplayFor(model => Model.Events.EventName)</option>
                                         </select>
                                         <span asp-validation-for="@item.EventId" class="text-danger"></span>
                                     </div>

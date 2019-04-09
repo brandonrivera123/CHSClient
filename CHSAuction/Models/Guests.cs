@@ -17,6 +17,7 @@ namespace CHSAuction.Models
         public int GuestId { get; set; }
         public string GuestFirstName { get; set; }
         public string GuestLastName { get; set; }
+        public string GuestFullName { get; set; }
         public string GuestEmail { get; set; }
         public string GuestPhone { get; set; }
         public int? OrganizationId { get; set; }

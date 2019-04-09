@@ -29,7 +29,7 @@ namespace CHSAuction.Controllers
             };
 
             ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventName", EditCheckInVM.EventId);
-            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFirstName", EditCheckInVM.GuestId);
+            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFullName", EditCheckInVM.GuestId);
 
             return View(EditCheckInVM);
         }
@@ -58,7 +58,7 @@ namespace CHSAuction.Controllers
         public IActionResult Create()
         {
             ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventName");
-            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFirstName");
+            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFullName");
             return View();
         }
 
@@ -76,7 +76,7 @@ namespace CHSAuction.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventName", checkIns.EventId);
-            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFirstName", checkIns.GuestId);
+            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFullName", checkIns.GuestId);
             return View(checkIns);
         }
 
@@ -94,7 +94,7 @@ namespace CHSAuction.Controllers
                 return NotFound();
             }
             ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventName", checkIns.EventId);
-            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFirstName", checkIns.GuestId);
+            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFullName", checkIns.GuestId);
             return View(checkIns);
         }
 
@@ -131,7 +131,7 @@ namespace CHSAuction.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventName", checkIns.EventId);
-            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFirstName", checkIns.GuestId);
+            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFullName", checkIns.GuestId);
             return View(checkIns);
         }
 

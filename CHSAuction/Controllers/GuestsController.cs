@@ -65,7 +65,7 @@ namespace CHSAuction.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("GuestId,GuestFirstName,GuestLastName,GuestEmail,GuestPhone,OrganizationId,GuestAddress,GuestCity,GuestState,GuestZip")] Guests guests)
+        public async Task<IActionResult> Create([Bind("GuestId,GuestFirstName,GuestLastName,GuestFullName,GuestEmail,GuestPhone,OrganizationId,GuestAddress,GuestCity,GuestState,GuestZip")] Guests guests)
         {
             if (ModelState.IsValid)
             {
@@ -99,7 +99,7 @@ namespace CHSAuction.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("GuestId,GuestFirstName,GuestLastName,GuestEmail,GuestPhone,OrganizationId,GuestAddress,GuestCity,GuestState,GuestZip")] Guests guests)
+        public async Task<IActionResult> Edit(int id, [Bind("GuestId,GuestFirstName,GuestLastName,GuestFullName,GuestEmail,GuestPhone,OrganizationId,GuestAddress,GuestCity,GuestState,GuestZip")] Guests guests)
         {
             if (id != guests.GuestId)
             {

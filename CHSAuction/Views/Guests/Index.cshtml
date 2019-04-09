@@ -193,7 +193,7 @@ $(document).ready(function(){
                                     <div class="form-group">
                                         <label asp-for="@item.OrganizationId" class="control-label">Organization</label>
                                         <select asp-for="OrganizationId" class="form-control" asp-items="ViewBag.OrganizationId">
-                                            <option value="@item.OrganizationId" selected></option>
+                                            <option value="@item.OrganizationId" selected>@Html.DisplayFor(model => item.Organization.OrganizationName)</option>
                                             <option value="">None</option>
                                         </select>
                                         <span asp-validation-for="@item.OrganizationId" class="text-danger"></span>

@@ -36,12 +36,12 @@ namespace CHSAuction.Controllers
             return View();
         }
 
-        public IActionResult MessageSent(int transId, int Total, string guestFirst, string guestLast, string email )
+        public IActionResult MessageSent(int transId, int Total, string guestName, string email )
         {
 
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress("Brandon", "brandonviolin@gmail.com"));
-            message.To.Add(new MailboxAddress("Guest", email));
+            message.To.Add(new MailboxAddress(guestName, email));
             message.Subject = "Test Transaction";
 
             string packages = "";
@@ -58,7 +58,7 @@ namespace CHSAuction.Controllers
 
             message.Body = new TextPart("html")
             {
-                Text = "First Name:" + guestFirst + "<br>Last Name:" + guestLast + "<br>Total Price:" + Total + "<br>Packages: " + packages
+                Text = "Name:" + guestName + "<br>Total Price:" + Total + "<br>Packages: " + packages
             };
 
             using (var client = new SmtpClient())

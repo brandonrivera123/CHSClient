@@ -46,7 +46,11 @@ namespace CHSAuction.Controllers
                 return NotFound();
             }
 
-            var items = await _context.Items.ToListAsync();
+            var items = await _context.Items
+                .Include(i => i.Guest)
+                .Include(i => i.Package)
+                .ToListAsync();
+
             if (items == null)
             {
                 return NotFound();
@@ -58,7 +62,7 @@ namespace CHSAuction.Controllers
                 Items = items
             };
 
-            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFirstName");
+            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFullName");
             ViewData["PackageId"] = new SelectList(_context.Packages, "PackageId", "PackageName");
             ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", packageItems.CategoryId);
 
