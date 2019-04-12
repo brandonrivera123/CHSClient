@@ -12,7 +12,9 @@ namespace CHSAuction.Models
         public int GuestId { get; set; }
         public int EventId { get; set; }
         public int TicketQuantity { get; set; }
+        [DisplayFormat(DataFormatString = "{0:C0}")]
         public int TicketPrice { get; set; }
+        [DisplayFormat(DataFormatString = "{0:C0}")]
         public int TicketTotalPrice { get; set; }
         public int? TransactionId { get; set; }
 
