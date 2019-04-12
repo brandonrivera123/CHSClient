@@ -330,8 +330,7 @@ namespace CHSAuction.Models
                     .IsRequired();
 
                 entity.Property(e => e.TransactionId)
-                    .HasColumnName("Transaction_ID")
-                    .IsRequired();
+                    .HasColumnName("Transaction_ID");
 
                 entity.HasOne(d => d.Guest)
                     .WithMany(p => p.Tickets)

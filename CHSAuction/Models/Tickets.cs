@@ -14,7 +14,7 @@ namespace CHSAuction.Models
         public int TicketQuantity { get; set; }
         public int TicketPrice { get; set; }
         public int TicketTotalPrice { get; set; }
-        public int TransactionId { get; set; }
+        public int? TransactionId { get; set; }
 
         public Guests Guest { get; set; }
         public Events Event { get; set; }

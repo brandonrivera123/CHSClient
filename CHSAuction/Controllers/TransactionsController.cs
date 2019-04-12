@@ -22,10 +22,14 @@ namespace CHSAuction.Controllers
         public async Task<IActionResult> Index()
         {
             var Transactions = await _context.Transactions.Include(t => t.Guest).Include(e => e.Event).ToListAsync();
+            var Tickets = await _context.Tickets.Include(t => t.Event).Include(t => t.Guest).Include(t => t.Transaction).ToListAsync();
+            var Packages = await _context.Packages.Include(p => p.Event).Include(p => p.Transaction).ToListAsync();
 
             var EditTransactionVM = new EditTransactionVM
             {
-                Transactions = Transactions
+                Transactions = Transactions,
+                Tickets = Tickets,
+                Packages = Packages
             };
 
             ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFullName");
@@ -159,6 +163,48 @@ namespace CHSAuction.Controllers
             _context.Transactions.Remove(transactions);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        // POST: Transactions/Index
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index(int transactionId, int ticketId)
+        {
+            var ticket = _context.Tickets.FirstOrDefault(i => i.TicketId == ticketId);
+
+            if (ticket == null)
+                return NotFound();
+
+            ticket.TransactionId = transactionId;
+
+            if (ModelState.IsValid)
+            {
+                _context.Update(ticket);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction("Index", "Transactions");
+        }
+
+        // POST: Transactions/Details
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Details(int transactionId, int packageId)
+        {
+            var package = _context.Packages.FirstOrDefault(i => i.PackageId == packageId);
+
+            if (package == null)
+                return NotFound();
+
+            package.TransactionId = transactionId;
+
+            if (ModelState.IsValid)
+            {
+                _context.Update(package);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction("Index", "Transactions");
         }
 
         private bool TransactionsExists(int id)
