@@ -92,7 +92,7 @@ $(document).ready(function(){
                                 <a href="#" data-toggle="modal" data-target="#deleteTransactionModal-@item.TransactionId">Delete</a>
                             </td>
                             <td>
-                                <a class="btn btn-primary" style="font-size:10px;" data-toggle="modal" data-target="#sendTransactionModal-@item.TransactionId">Send Transaction</a>
+                                <a class="btn btn-primary" style="font-size:10px;" data-toggle="modal" data-target="#sendTransactionModal-@item.TransactionId">Send Gift Acknowledgement</a>
                             </td>
                         </tr>
 
@@ -110,6 +110,11 @@ $(document).ready(function(){
                                                 <label asp-for="@item.TransactionId" class="control-label">Transaction ID</label>
                                                 <input asp-for="TransactionId" class="form-control" value="@item.TransactionId" readonly />
                                                 <span asp-validation-for="@item.TransactionId" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label asp-for="@item.TransactionAmountPaid" class="control-label">Amount Paid</label>
+                                                <input asp-for="TransactionAmountPaid" class="form-control" value="@item.TransactionAmountPaid" />
+                                                <span asp-validation-for="@item.TransactionAmountPaid" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
                                                 <label asp-for="@item.TransactionTotalPrice" class="control-label">Total Price</label>
@@ -131,7 +136,7 @@ $(document).ready(function(){
                                                 <span asp-validation-for="@item.EventId" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
-                                                <label asp-for="@item.TransactionSent" class="control-label">Sent?</label>
+                                                <label asp-for="@item.TransactionSent" class="control-label">Gift Acknowledged?</label>
                                                 <input type="checkbox" asp-for="TransactionSent" class="form-control" checked="@item.TransactionSent" />
                                                 <span asp-validation-for="@item.TransactionSent" class="text-danger"></span>
                                             </div>
@@ -160,13 +165,13 @@ $(document).ready(function(){
                                         <h4>Ticket Sales:</h4>
                                         @foreach (var tickets in Model.Tickets.Where(t => t.TransactionId == item.TransactionId))
                                         {
-                                            <p>@tickets.Guest.GuestFullName - @tickets.Event.EventName - @tickets.TicketQuantity Ticket(s)</p>
+                                            <p>@tickets.TicketTotalPrice - @tickets.Guest.GuestFullName - @tickets.Event.EventName - @tickets.TicketQuantity Ticket(s)</p>
                                         }
                                         <hr />
                                         <h4>Packages:</h4>
                                         @foreach (var pack in Model.Packages.Where(p => p.TransactionId == item.TransactionId))
                                         {
-                                            <p>@pack.PackageName</p>
+                                            <p>@pack.PackageFinalPrice - @pack.PackageName</p>
                                         }
                                     </div>
                                 </div>
@@ -187,6 +192,12 @@ $(document).ready(function(){
                                             </dt>
                                             <dd>
                                                 @Html.DisplayFor(model => item.TransactionId)
+                                            </dd>
+                                            <dt>
+                                                Amount Paid
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(model => item.TransactionAmountPaid)
                                             </dd>
                                             <dt>
                                                 Total Price
@@ -353,7 +364,7 @@ $(document).ready(function(){
                                 <a href="#" data-toggle="modal" data-target="#deleteTransactionModal-@item.TransactionId">Delete</a>
                             </td>
                             <td>
-                                <a class="btn btn-primary" style="font-size:10px;" data-toggle="modal" data-target="#sendTransactionModal-@item.TransactionId">Send Transaction</a>
+                                <a class="btn btn-primary" style="font-size:10px;" data-toggle="modal" data-target="#sendTransactionModal-@item.TransactionId">Send Gift Acknowledgement</a>
                             </td>
                         </tr>
 
@@ -371,6 +382,11 @@ $(document).ready(function(){
                                                 <label asp-for="@item.TransactionId" class="control-label">Transaction ID</label>
                                                 <input asp-for="TransactionId" class="form-control" value="@item.TransactionId" readonly />
                                                 <span asp-validation-for="@item.TransactionId" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label asp-for="@item.TransactionAmountPaid" class="control-label">Amount Paid</label>
+                                                <input asp-for="TransactionAmountPaid" class="form-control" value="@item.TransactionAmountPaid" />
+                                                <span asp-validation-for="@item.TransactionAmountPaid" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
                                                 <label asp-for="@item.TransactionTotalPrice" class="control-label">Total Price</label>
@@ -392,7 +408,7 @@ $(document).ready(function(){
                                                 <span asp-validation-for="@item.EventId" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
-                                                <label asp-for="@item.TransactionSent" class="control-label">Sent?</label>
+                                                <label asp-for="@item.TransactionSent" class="control-label">Gift Acknowledged?</label>
                                                 <input type="checkbox" asp-for="TransactionSent" class="form-control" checked="@item.TransactionSent" />
                                                 <span asp-validation-for="@item.TransactionSent" class="text-danger"></span>
                                             </div>
@@ -421,13 +437,13 @@ $(document).ready(function(){
                                         <h4>Ticket Sales:</h4>
                                         @foreach (var tickets in Model.Tickets.Where(t => t.TransactionId == item.TransactionId))
                                         {
-                                            <p>@tickets.Guest.GuestFullName - @tickets.Event.EventName - @tickets.TicketQuantity Ticket(s)</p>
+                                            <p>@tickets.TicketTotalPrice - @tickets.Guest.GuestFullName - @tickets.Event.EventName - @tickets.TicketQuantity Ticket(s)</p>
                                         }
                                         <hr />
                                         <h4>Packages:</h4>
                                         @foreach (var pack in Model.Packages.Where(p => p.TransactionId == item.TransactionId))
                                         {
-                                            <p>@pack.PackageName</p>
+                                            <p>@pack.PackageFinalPrice - @pack.PackageName</p>
                                         }
                                     </div>
                                 </div>
@@ -448,6 +464,12 @@ $(document).ready(function(){
                                             </dt>
                                             <dd>
                                                 @Html.DisplayFor(model => item.TransactionId)
+                                            </dd>
+                                            <dt>
+                                                Amount Paid
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(model => item.TransactionAmountPaid)
                                             </dd>
                                             <dt>
                                                 Total Price
@@ -562,7 +584,7 @@ $(document).ready(function(){
                                 <a href="#" data-toggle="modal" data-target="#deleteTransactionModal-@item.TransactionId">Delete</a>
                             </td>
                             <td>
-                                <a class="btn btn-primary" style="font-size:10px;" data-toggle="modal" data-target="#sendTransactionModal-@item.TransactionId">Send Transaction</a>
+                                <a class="btn btn-primary" style="font-size:10px;" data-toggle="modal" data-target="#sendTransactionModal-@item.TransactionId">Send Gift Acknowledgement</a>
                             </td>
                         </tr>
 
@@ -580,6 +602,11 @@ $(document).ready(function(){
                                                 <label asp-for="@item.TransactionId" class="control-label">Transaction ID</label>
                                                 <input asp-for="TransactionId" class="form-control" value="@item.TransactionId" readonly />
                                                 <span asp-validation-for="@item.TransactionId" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label asp-for="@item.TransactionAmountPaid" class="control-label">Amount Paid</label>
+                                                <input asp-for="TransactionAmountPaid" class="form-control" value="@item.TransactionAmountPaid" />
+                                                <span asp-validation-for="@item.TransactionAmountPaid" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
                                                 <label asp-for="@item.TransactionTotalPrice" class="control-label">Total Price</label>
@@ -601,7 +628,7 @@ $(document).ready(function(){
                                                 <span asp-validation-for="@item.EventId" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
-                                                <label asp-for="@item.TransactionSent" class="control-label">Sent?</label>
+                                                <label asp-for="@item.TransactionSent" class="control-label">Gift Acknowledged?</label>
                                                 <input type="checkbox" asp-for="TransactionSent" class="form-control" checked="@item.TransactionSent" />
                                                 <span asp-validation-for="@item.TransactionSent" class="text-danger"></span>
                                             </div>
@@ -630,13 +657,13 @@ $(document).ready(function(){
                                         <h4>Ticket Sales:</h4>
                                         @foreach (var tickets in Model.Tickets.Where(t => t.TransactionId == item.TransactionId))
                                         {
-                                            <p>@tickets.Guest.GuestFullName - @tickets.Event.EventName - @tickets.TicketQuantity Ticket(s)</p>
+                                            <p>@tickets.TicketTotalPrice - @tickets.Guest.GuestFullName - @tickets.Event.EventName - @tickets.TicketQuantity Ticket(s)</p>
                                         }
                                         <hr />
                                         <h4>Packages:</h4>
                                         @foreach (var pack in Model.Packages.Where(p => p.TransactionId == item.TransactionId))
                                         {
-                                            <p>@pack.PackageName</p>
+                                            <p>@pack.PackageFinalPrice - @pack.PackageName</p>
                                         }
                                     </div>
                                 </div>
@@ -657,6 +684,12 @@ $(document).ready(function(){
                                             </dt>
                                             <dd>
                                                 @Html.DisplayFor(model => item.TransactionId)
+                                            </dd>
+                                            <dt>
+                                                Amount Paid
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(model => item.TransactionAmountPaid)
                                             </dd>
                                             <dt>
                                                 Total Price

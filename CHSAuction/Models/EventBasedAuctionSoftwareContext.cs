@@ -361,6 +361,8 @@ namespace CHSAuction.Models
 
                 entity.Property(e => e.TransactionTotalPrice).HasColumnName("Transaction_TotalPrice");
 
+                entity.Property(e => e.TransactionAmountPaid).HasColumnName("Transaction_AmountPaid");
+
                 entity.Property(e => e.EventId).HasColumnName("Event_ID");
 
                 entity.Property(e => e.TransactionSent).HasColumnName("Transaction_Sent");

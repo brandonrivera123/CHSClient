@@ -64,7 +64,7 @@ namespace CHSAuction.Controllers
 
             ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFullName");
             ViewData["PackageId"] = new SelectList(_context.Packages, "PackageId", "PackageName");
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", packageItems.CategoryId);
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryName", packageItems.CategoryId);
 
             return View(packageItems);
         }
