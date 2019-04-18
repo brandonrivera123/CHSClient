@@ -185,10 +185,16 @@ namespace CHSAuction.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var packages = await _context.Packages.FindAsync(id);
-            _context.Packages.Remove(packages);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                var packages = await _context.Packages.FindAsync(id);
+                _context.Packages.Remove(packages);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            } catch (Exception ex)
+            {
+                return RedirectToAction(nameof(Index));
+            }
         }
 
         // POST: Packages/Details

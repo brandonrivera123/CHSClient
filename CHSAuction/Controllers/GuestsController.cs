@@ -154,10 +154,16 @@ namespace CHSAuction.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var guests = await _context.Guests.FindAsync(id);
-            _context.Guests.Remove(guests);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                var guests = await _context.Guests.FindAsync(id);
+                _context.Guests.Remove(guests);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            } catch (Exception ex)
+            {
+                return RedirectToAction(nameof(Index));
+            }
         }
 
         private bool GuestsExists(int id)
