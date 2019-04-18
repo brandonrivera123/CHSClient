@@ -28,9 +28,18 @@ namespace CHSAuction.Controllers
                 Tickets = tickets
             };
 
-            ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventName", EditTicketVM.EventId);
-            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFullName", EditTicketVM.GuestId);
-            ViewData["TransactionId"] = new SelectList(_context.Transactions, "TransactionId", "TransactionId", EditTicketVM.TransactionId);
+            var guests =
+                _context.Guests
+                    .Select(n => new
+                    {
+                        GuestId = n.GuestId,
+                        GuestFullName = string.Format("{0} - {1}", n.GuestFullName, n.GuestEmail)
+                    })
+                    .ToList();
+
+            ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventName");
+            ViewData["GuestId"] = new SelectList(guests, "GuestId", "GuestFullName");
+            ViewData["TransactionId"] = new SelectList(_context.Transactions, "TransactionId", "TransactionId");
 
             return View(EditTicketVM);
         }

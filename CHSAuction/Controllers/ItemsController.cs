@@ -25,9 +25,18 @@ namespace CHSAuction.Controllers
 
             var itemsPackages = new ItemPackagesVM { items = items};
 
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryName", itemsPackages.CategoryId);
-            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFullName", itemsPackages.GuestId);
-            ViewData["PackageId"] = new SelectList(_context.Packages, "PackageId", "PackageName", itemsPackages.PackageId);
+            var guests =
+                _context.Guests
+                    .Select(n => new
+                    {
+                        GuestId = n.GuestId,
+                        GuestFullName = string.Format("{0} - {1}", n.GuestFullName, n.GuestEmail)
+                    })
+                    .ToList();
+
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryName");
+            ViewData["GuestId"] = new SelectList(guests, "GuestId", "GuestFullName");
+            ViewData["PackageId"] = new SelectList(_context.Packages, "PackageId", "PackageName");
             return View(itemsPackages);
         }
 

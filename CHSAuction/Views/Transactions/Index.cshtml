@@ -124,7 +124,7 @@ $(document).ready(function(){
                                             <div class="form-group">
                                                 <label asp-for="@item.GuestId" class="control-label">Guest</label>
                                                 <select asp-for="GuestId" class="form-control" asp-items="ViewBag.GuestId">
-                                                    <option value="@item.GuestId">@item.Guest.GuestFullName</option>
+                                                    <option value="@item.GuestId">@item.Guest.GuestFullName - @item.Guest.GuestEmail</option>
                                                 </select>
                                                 <span asp-validation-for="@item.GuestId" class="text-danger"></span>
                                             </div>
@@ -396,7 +396,7 @@ $(document).ready(function(){
                                             <div class="form-group">
                                                 <label asp-for="@item.GuestId" class="control-label">Guest</label>
                                                 <select asp-for="GuestId" class="form-control" asp-items="ViewBag.GuestId">
-                                                    <option value="@item.GuestId">@item.Guest.GuestFullName</option>
+                                                    <option value="@item.GuestId">@item.Guest.GuestFullName - @item.Guest.GuestEmail</option>
                                                 </select>
                                                 <span asp-validation-for="@item.GuestId" class="text-danger"></span>
                                             </div>
@@ -616,7 +616,7 @@ $(document).ready(function(){
                                             <div class="form-group">
                                                 <label asp-for="@item.GuestId" class="control-label">Guest</label>
                                                 <select asp-for="GuestId" class="form-control" asp-items="ViewBag.GuestId">
-                                                    <option value="@item.GuestId">@item.Guest.GuestFullName</option>
+                                                    <option value="@item.GuestId">@item.Guest.GuestFullName - @item.Guest.GuestEmail</option>
                                                 </select>
                                                 <span asp-validation-for="@item.GuestId" class="text-danger"></span>
                                             </div>

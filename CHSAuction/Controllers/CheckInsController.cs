@@ -21,15 +21,23 @@ namespace CHSAuction.Controllers
         // GET: CheckIns
         public async Task<IActionResult> Index()
         {
-            var checkins = await _context.CheckIns.Include(c => c.Event).Include(c => c.Guest).ToListAsync(); ;
+            var checkins = await _context.CheckIns.Include(c => c.Event).Include(c => c.Guest).ToListAsync();
+            var guests =
+                _context.Guests
+                    .Select(n => new
+                    {
+                        GuestId = n.GuestId,
+                        GuestFullName = string.Format("{0} - {1}", n.GuestFullName, n.GuestEmail)
+                    })
+                    .ToList();
 
             var EditCheckInVM = new EditCheckInVM
             {
                 CheckIns = checkins
             };
 
-            ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventName", EditCheckInVM.EventId);
-            ViewData["GuestId"] = new SelectList(_context.Guests, "GuestId", "GuestFullName", EditCheckInVM.GuestId);
+            ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventName");
+            ViewData["GuestId"] = new SelectList(guests, "GuestId", "GuestFullName");
 
             return View(EditCheckInVM);
         }

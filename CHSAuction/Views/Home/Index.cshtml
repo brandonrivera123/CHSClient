@@ -17,19 +17,82 @@
     <h2>List of Upcoming Events:</h2>
     <hr />
     <div class="row">
-        @foreach (var item in Model.Where(e => (e.EventStart - DateTime.Now).TotalDays < 30 && (e.EventStart - DateTime.Now).TotalDays >= 0))
+        @foreach (var item in Model)
         {
-            <div id="eventCard" class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h3>@Html.DisplayFor(model => item.EventName)</h3>
-                        <p>Location: @Html.DisplayFor(model => item.EventLocation)</p>
-                        <p># of Tickets: @Html.DisplayFor(model => item.EventTicketNum)</p>
-                        <p>Start Time: @Html.DisplayFor(model => item.EventStart)</p>
-                        <a class="btn btn-primary" asp-controller="Events" asp-action="Details" asp-route-id="@item.EventId">Details</a>
-                    </div>
-                </div>
-            </div>
+            @if (DateTime.Today.Month < 7)
+            {
+                @if (item.EventStart.Month < 7)
+                {
+                    @if (DateTime.Today.Year == item.EventStart.Year)
+                    {
+                        <div id="eventCard" class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>@Html.DisplayFor(model => item.EventName)</h3>
+                                    <p>Location: @Html.DisplayFor(model => item.EventLocation)</p>
+                                    <p># of Tickets: @Html.DisplayFor(model => item.EventTicketNum)</p>
+                                    <p>Start Time: @Html.DisplayFor(model => item.EventStart)</p>
+                                    <a class="btn btn-primary" asp-controller="Events" asp-action="Details" asp-route-id="@item.EventId">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    @if (DateTime.Today.AddYears(-1).Year == item.EventStart.Year)
+                    {
+                        <div id="eventCard" class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>@Html.DisplayFor(model => item.EventName)</h3>
+                                    <p>Location: @Html.DisplayFor(model => item.EventLocation)</p>
+                                    <p># of Tickets: @Html.DisplayFor(model => item.EventTicketNum)</p>
+                                    <p>Start Time: @Html.DisplayFor(model => item.EventStart)</p>
+                                    <a class="btn btn-primary" asp-controller="Events" asp-action="Details" asp-route-id="@item.EventId">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+            else
+            {
+                @if (item.EventStart.Month < 7)
+                {
+                    @if (DateTime.Today.AddYears(1).Year == item.EventStart.Year)
+                    {
+                        <div id="eventCard" class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>@Html.DisplayFor(model => item.EventName)</h3>
+                                    <p>Location: @Html.DisplayFor(model => item.EventLocation)</p>
+                                    <p># of Tickets: @Html.DisplayFor(model => item.EventTicketNum)</p>
+                                    <p>Start Time: @Html.DisplayFor(model => item.EventStart)</p>
+                                    <a class="btn btn-primary" asp-controller="Events" asp-action="Details" asp-route-id="@item.EventId">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    @if (DateTime.Today.Year == item.EventStart.Year)
+                    {
+                        <div id="eventCard" class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>@Html.DisplayFor(model => item.EventName)</h3>
+                                    <p>Location: @Html.DisplayFor(model => item.EventLocation)</p>
+                                    <p># of Tickets: @Html.DisplayFor(model => item.EventTicketNum)</p>
+                                    <p>Start Time: @Html.DisplayFor(model => item.EventStart)</p>
+                                    <a class="btn btn-primary" asp-controller="Events" asp-action="Details" asp-route-id="@item.EventId">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
         }
     </div>
 </div>

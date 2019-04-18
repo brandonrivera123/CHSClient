@@ -64,7 +64,7 @@
                                     <div class="form-group">
                                         <label asp-for="@item.GuestId" class="control-label">Guest</label>
                                         <select asp-for="GuestId" class="form-control" asp-items="ViewBag.GuestId">
-                                            <option value="@item.GuestId" selected>@item.Guest.GuestFullName</option>
+                                            <option value="@item.GuestId" selected>@item.Guest.GuestFullName - @item.Guest.GuestEmail</option>
                                         </select>
                                         <span asp-validation-for="@item.GuestId" class="text-danger"></span>
                                     </div>
