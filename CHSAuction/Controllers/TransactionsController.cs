@@ -25,6 +25,23 @@ namespace CHSAuction.Controllers
             var Tickets = await _context.Tickets.Include(t => t.Event).Include(t => t.Guest).Include(t => t.Transaction).ToListAsync();
             var Packages = await _context.Packages.Include(p => p.Event).Include(p => p.Transaction).ToListAsync();
 
+            foreach (var item in Transactions)
+            {
+                var sum = 0;
+                foreach (var pack in Packages.Where(p => p.TransactionId == item.TransactionId))
+                {
+                    if (pack.PackageFinalPrice != null)
+                        sum += (int)pack.PackageFinalPrice;
+                }
+
+                foreach (var ticket in Tickets.Where(t => t.TransactionId == item.TransactionId))
+                {
+                    sum += ticket.TicketTotalPrice;
+                }
+
+                item.TransactionTotalPrice = sum;
+            }
+
             var EditTransactionVM = new EditTransactionVM
             {
                 Transactions = Transactions,
@@ -40,6 +57,8 @@ namespace CHSAuction.Controllers
                         GuestFullName = string.Format("{0} - {1}", n.GuestFullName, n.GuestEmail)
                     })
                     .ToList();
+
+
 
             ViewData["GuestId"] = new SelectList(guests, "GuestId", "GuestFullName");
             ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventName");
