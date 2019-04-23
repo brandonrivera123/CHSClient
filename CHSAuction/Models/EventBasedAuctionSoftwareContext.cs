@@ -186,7 +186,7 @@ namespace CHSAuction.Models
 
                 entity.Property(e => e.GuestFullName)
                     .IsRequired()
-                    .ValueGeneratedOnUpdate()
+                    .ValueGeneratedOnAddOrUpdate()
                     .HasColumnName("Guest_FullName")
                     .HasMaxLength(255)
                     .IsUnicode(false);

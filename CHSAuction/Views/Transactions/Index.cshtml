@@ -118,7 +118,7 @@ $(document).ready(function(){
                                             </div>
                                             <div class="form-group">
                                                 <label asp-for="@item.TransactionTotalPrice" class="control-label">Total Price</label>
-                                                <input asp-for="TransactionTotalPrice" class="form-control" value="@item.TransactionTotalPrice" />
+                                                <input asp-for="TransactionTotalPrice" class="form-control" value="@item.TransactionTotalPrice" readonly />
                                                 <span asp-validation-for="@item.TransactionTotalPrice" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
@@ -165,13 +165,13 @@ $(document).ready(function(){
                                         <h4>Ticket Sales:</h4>
                                         @foreach (var tickets in Model.Tickets.Where(t => t.TransactionId == item.TransactionId))
                                         {
-                                            <p>@tickets.TicketTotalPrice - @tickets.Guest.GuestFullName - @tickets.Event.EventName - @tickets.TicketQuantity Ticket(s)</p>
+                                            <p>$@tickets.TicketTotalPrice - @tickets.Guest.GuestFullName - @tickets.Event.EventName - @tickets.TicketQuantity Ticket(s)</p>
                                         }
                                         <hr />
                                         <h4>Packages:</h4>
                                         @foreach (var pack in Model.Packages.Where(p => p.TransactionId == item.TransactionId))
                                         {
-                                            <p>@pack.PackageFinalPrice - @pack.PackageName</p>
+                                            <p>$@pack.PackageFinalPrice - @pack.PackageName</p>
                                         }
                                     </div>
                                 </div>
@@ -243,12 +243,12 @@ $(document).ready(function(){
                                             <input name="transId" type="hidden" asp-for="TransactionId" value="@item.TransactionId" />
                                             <div class="form-group">
                                                 <label asp-for="@item.TransactionTotalPrice" class="control-label">Total Price</label>
-                                                <input name="Total" asp-for="TransactionTotalPrice" class="form-control" value="@item.TransactionTotalPrice" />
+                                                <input name="Total" asp-for="TransactionTotalPrice" class="form-control" value="@item.TransactionTotalPrice" readonly />
                                                 <span asp-validation-for="@item.TransactionTotalPrice" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
                                                 <label asp-for="@item.GuestId" class="control-label">Guest</label>
-                                                <input name="guestFirst" asp-for="@item.Guest.GuestFullName" class="form-control" value="@item.Guest.GuestFullName" readonly />
+                                                <input name="guestName" asp-for="@item.Guest.GuestFullName" class="form-control" value="@item.Guest.GuestFullName" readonly />
                                                 <span asp-validation-for="@item.GuestId" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
@@ -390,7 +390,7 @@ $(document).ready(function(){
                                             </div>
                                             <div class="form-group">
                                                 <label asp-for="@item.TransactionTotalPrice" class="control-label">Total Price</label>
-                                                <input asp-for="TransactionTotalPrice" class="form-control" value="@item.TransactionTotalPrice" />
+                                                <input asp-for="TransactionTotalPrice" class="form-control" value="@item.TransactionTotalPrice" readonly />
                                                 <span asp-validation-for="@item.TransactionTotalPrice" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
@@ -437,13 +437,13 @@ $(document).ready(function(){
                                         <h4>Ticket Sales:</h4>
                                         @foreach (var tickets in Model.Tickets.Where(t => t.TransactionId == item.TransactionId))
                                         {
-                                            <p>@tickets.TicketTotalPrice - @tickets.Guest.GuestFullName - @tickets.Event.EventName - @tickets.TicketQuantity Ticket(s)</p>
+                                            <p>$@tickets.TicketTotalPrice - @tickets.Guest.GuestFullName - @tickets.Event.EventName - @tickets.TicketQuantity Ticket(s)</p>
                                         }
                                         <hr />
                                         <h4>Packages:</h4>
                                         @foreach (var pack in Model.Packages.Where(p => p.TransactionId == item.TransactionId))
                                         {
-                                            <p>@pack.PackageFinalPrice - @pack.PackageName</p>
+                                            <p>$@pack.PackageFinalPrice - @pack.PackageName</p>
                                         }
                                     </div>
                                 </div>
@@ -515,7 +515,7 @@ $(document).ready(function(){
                                             <input name="transId" type="hidden" asp-for="TransactionId" value="@item.TransactionId" />
                                             <div class="form-group">
                                                 <label asp-for="@item.TransactionTotalPrice" class="control-label">Total Price</label>
-                                                <input name="Total" asp-for="TransactionTotalPrice" class="form-control" value="@item.TransactionTotalPrice" />
+                                                <input name="Total" asp-for="TransactionTotalPrice" class="form-control" value="@item.TransactionTotalPrice" readonly />
                                                 <span asp-validation-for="@item.TransactionTotalPrice" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
@@ -610,7 +610,7 @@ $(document).ready(function(){
                                             </div>
                                             <div class="form-group">
                                                 <label asp-for="@item.TransactionTotalPrice" class="control-label">Total Price</label>
-                                                <input asp-for="TransactionTotalPrice" class="form-control" value="@item.TransactionTotalPrice" />
+                                                <input asp-for="TransactionTotalPrice" class="form-control" value="@item.TransactionTotalPrice" readonly />
                                                 <span asp-validation-for="@item.TransactionTotalPrice" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
@@ -657,13 +657,13 @@ $(document).ready(function(){
                                         <h4>Ticket Sales:</h4>
                                         @foreach (var tickets in Model.Tickets.Where(t => t.TransactionId == item.TransactionId))
                                         {
-                                            <p>@tickets.TicketTotalPrice - @tickets.Guest.GuestFullName - @tickets.Event.EventName - @tickets.TicketQuantity Ticket(s)</p>
+                                            <p>$@tickets.TicketTotalPrice - @tickets.Guest.GuestFullName - @tickets.Event.EventName - @tickets.TicketQuantity Ticket(s)</p>
                                         }
                                         <hr />
                                         <h4>Packages:</h4>
                                         @foreach (var pack in Model.Packages.Where(p => p.TransactionId == item.TransactionId))
                                         {
-                                            <p>@pack.PackageFinalPrice - @pack.PackageName</p>
+                                            <p>$@pack.PackageFinalPrice - @pack.PackageName</p>
                                         }
                                     </div>
                                 </div>
@@ -735,7 +735,7 @@ $(document).ready(function(){
                                             <input name="transId" type="hidden" asp-for="TransactionId" value="@item.TransactionId" />
                                             <div class="form-group">
                                                 <label asp-for="@item.TransactionTotalPrice" class="control-label">Total Price</label>
-                                                <input name="Total" asp-for="TransactionTotalPrice" class="form-control" value="@item.TransactionTotalPrice" />
+                                                <input name="Total" asp-for="TransactionTotalPrice" class="form-control" value="@item.TransactionTotalPrice" readonly />
                                                 <span asp-validation-for="@item.TransactionTotalPrice" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
@@ -773,11 +773,7 @@ $(document).ready(function(){
             <div class="modal-body">
                 <form asp-action="Create">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group">
-                        <label asp-for="TransactionTotalPrice" class="control-label">Total Price</label>
-                        <input asp-for="TransactionTotalPrice" class="form-control" />
-                        <span asp-validation-for="TransactionTotalPrice" class="text-danger"></span>
-                    </div>
+                    <input type="hidden" asp-for="TransactionTotalPrice" class="form-control" />
                     <div class="form-group">
                         <label asp-for="GuestId" class="control-label">Guest</label>
                         <select asp-for="GuestId" class="form-control" asp-items="ViewBag.GuestId"></select>
